@@ -1,55 +1,50 @@
-.wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  text-align: center;
+  flex-direction: column;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper > * {
-  padding: 10px;
-  flex: 1 100%;
+  padding: .5em 1.3em;
 }
 
-.main {
-  text-align: left;
+.nav {
+  order: -1;
 }
 
-.aside-1 {
-  text-align: left;
+.nav,
+.posts {
 }
 
-.aside-2 {
-  text-align: left;
-}
-
-@media all and (min-width: 600px) {
-  .aside {
-    flex: 1 auto;
+@media (min-width: 860px) {
+  .wrapper {
+    flex-direction: row;
+    flex: 1;
+  }
+  .content {
+    flex: 1;
+  }
+  .nav {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+  .posts {
+    flex: 0 0 20em;
   }
 }
-@media all and (min-width: 800px) {
-  .main {
-    flex: 3 0px;
-  }
 
-  .aside-1 {
-    order: 1;
-  }
-
-  .main {
-    order: 2;
-  }
-
-  .aside-2 {
-    order: 3;
-  }
+a {
+  color: gray;
 }
-body {
-  padding: 2em;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
+p {
+  padding: .6em 0;
+}
+
+header{
+  padding: 0 1.3em;
 }
